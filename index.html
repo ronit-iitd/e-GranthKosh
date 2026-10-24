@@ -1,0 +1,504 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- =========================================
+         1. PAGE METADATA
+         ========================================= -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta
+        name="description"
+        content="e-GranthaKosh — Bengali literary heritage research space"
+    >
+
+    <title>e-GranthKosh | Bengali Literary Heritage</title>
+
+    <!-- External CSS and JavaScript files -->
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- =========================================
+         2. HEADER AND NAVIGATION
+         Logo, mobile menu, and navigation links
+         ========================================= -->
+    <header class="header">
+
+        <!-- Website logo and name -->
+        <a class="brand" href="#home" data-page="home">
+            <span class="logo">Logo space</span>
+
+            <span>
+                <b>e-GranthKosh</b>
+                <small>Bengali Literary Heritage</small>
+            </span>
+        </a>
+
+        <!-- Mobile navigation toggle -->
+
+
+        <!-- can be added later -->
+
+        <!-- Main navigation -->
+        <nav id="mainNav">
+            <a href="#home" data-page="home">Home</a>
+            <a href="#login" data-page="login">Log in</a>
+
+            <a class="btn small" href="#register" data-page="register">
+                Create account
+            </a>
+        </nav>
+
+    </header>
+
+
+    <!-- =========================================
+         3. MAIN WEBSITE CONTENT
+         Contains Home, Login, and Registration
+         ========================================= -->
+    <main>
+
+
+        <!-- =====================================
+             3A. HOME PAGE
+             Main landing page of e-GranthaKosh
+             ===================================== -->
+        <section id="home" class="page active">
+            <section class="hero">
+                <div>
+                    <p class="eyebrow">Digital research on Indian literary heritage</p>
+                    <h1>e-GranthKosh</h1>
+                    <p class="intro">
+                        A research project to help preserve and explore heritage texts
+                        in Indian languages through searchable digital collections and
+                        computational methods.
+                    </p>
+                    <a class="btn" href="#register" data-page="register">Create an account</a>
+                    <a class="link" href="#login" data-page="login">Already registered? Log in</a>
+                </div>
+                <div class="art" aria-label="Bengali literary heritage">
+                    <div class="manuscript">
+                        <small>e-GranthKosh</small>
+                        <h2>বাংলা<br>সাহিত্য<br><span>ও সংস্কৃতি</span></h2>
+                        <hr>
+                        <p>Texts, archives<br>and research</p>
+                        <i>Logo can be added here</i>
+                    </div>
+                </div>
+            </section>
+
+            <section class="about" id="about-project">
+                <div class="logo big" aria-hidden="true">Logo symbol</div>
+                <div>
+                    <!-- <p class="eyebrow">About the project</p> -->
+                    <h2>Making heritage texts<br><em>available for research.</em></h2>
+                </div>
+               <!--  <p>
+                    The project aims to build reliable, machine-readable collections
+                    of heritage texts in Indian languages and support new research in
+                    literary history, language, and culture.
+                </p> -->
+            </section>
+
+            <section class="section project-details">
+                <p class="eyebrow">Project information</p>
+                <p><strong>A research project at the Indian Institute of Technology Delhi, supported by the Anusandhan National Research Foundation (ANRF).</strong></p>
+                <p class="hint">Any small info can be added(people involved in this project)</p>
+            </section>
+        </section>
+        <!-- END OF HOME PAGE -->
+
+
+        <!-- =====================================
+             3B. LOGIN PAGE
+             Existing users access their accounts
+             ===================================== -->
+        <section id="login" class="page auth-page">
+
+            <div class="auth-layout">
+
+                <!-- Login page introduction -->
+                <aside>
+
+                    <p class="eyebrow">
+                        <!-- Your research space -->
+                    </p>
+
+                    <h1>
+                        Where literary heritage<br>
+                        <em>meets computation.</em>
+                    </h1>
+
+                    <p>
+                        Work with digitised texts to investigate patterns, language,
+                         and connections across Bengali literary history.
+                    </p>
+
+                    <blockquote>
+                        “Reading closely. Finding patterns. Asking new questions.”
+                    </blockquote>
+
+                </aside>
+
+
+                <!-- Login form card -->
+                <section class="auth-card">
+
+                    <p class="eyebrow">
+                        Welcome back
+                    </p>
+
+                    <h2>Log in to your account</h2>
+
+                    <p class="muted">
+                        Pick up where your research left off.
+                    </p>
+
+
+                    <!-- Social login buttons
+                         Firebase authentication is not connected yet -->
+                    <button
+                        class="social"
+                        type="button"
+                        data-provider="Google"
+                    >
+                        Continue with Google
+                    </button>
+
+                    <button
+                        class="social"
+                        type="button"
+                        data-provider="GitHub"
+                    >
+                        Continue with GitHub
+                    </button>
+
+
+                    <div class="or">
+                        or continue with email
+                    </div>
+
+
+                    <!-- Email and password login form -->
+                    <form id="loginForm">
+
+                        <label for="email">
+                            Email address
+                        </label>
+
+                        <input
+                            id="email"
+                            type="email"
+                            placeholder="you@example.com"
+                            required
+                        >
+
+
+                        <label for="password">
+                            Password
+                        </label>
+
+                        <!-- Password field with visibility toggle -->
+                        <div class="pass">
+
+                            <input
+                                id="password"
+                                type="password"
+                                placeholder="Enter password"
+                                minlength="8"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                data-toggle="password"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+
+
+                        <!-- Remember me and password recovery -->
+                        <div class="row">
+
+                            <label class="check">
+                                <input type="checkbox">
+                                Remember me
+                            </label>
+
+                            <a href="#" id="forgot">
+                                Forgot password?
+                            </a>
+
+                        </div>
+
+
+                        <!-- Submit login form -->
+                        <button class="btn full">
+                            Log in →
+                        </button>
+
+                        <!-- Login feedback message -->
+                        <p
+                            id="loginMessage"
+                            class="message"
+                            aria-live="polite"
+                        ></p>
+
+                    </form>
+
+
+                    <!-- Link to registration page -->
+                    <p class="switch">
+                        New to e-GranthaKosh?
+                        <a href="#register" data-page="register">
+                            Create an account
+                        </a>
+                    </p>
+
+
+                    <!-- Prototype warning -->
+                    <p class="disclaimer">
+                        Prototype only: authentication is not active.
+                        Do not enter a real password.
+                    </p>
+
+                </section>
+
+            </div>
+
+        </section>
+        <!-- END OF LOGIN PAGE -->
+
+
+        <!-- =====================================
+             3C. REGISTRATION PAGE
+             New users create an account
+             ===================================== -->
+        <section id="register" class="page auth-page">
+
+            <div class="auth-layout">
+
+                <!-- Registration page introduction -->
+                <aside>
+
+                    <!-- <p class="eyebrow">
+                        Join the conversation
+                    </p> -->
+
+                    <h1>
+                        Begin your<br>
+                        <em>research journey.</em>
+                    </h1>
+
+                    <p>
+                        Create your profile to explore Bengali literary heritage
+                         through digitised texts and computational research.
+                    </p>
+
+                    <blockquote>
+                        “New questions begin with the texts we preserve.”
+                    </blockquote>
+
+                </aside>
+
+
+                <!-- Registration form card -->
+                <section class="auth-card">
+
+                    <p class="eyebrow">
+                        Get started
+                    </p>
+
+                    <h2>Create your account</h2>
+
+                    <p class="muted">
+                        A space for reading, learning, and research.
+                    </p>
+
+
+                    <!-- Social registration buttons -->
+                    <button
+                        class="social"
+                        type="button"
+                        data-provider="Google"
+                    >
+                        Sign up with Google
+                    </button>
+
+                    <button
+                        class="social"
+                        type="button"
+                        data-provider="GitHub"
+                    >
+                        Sign up with GitHub
+                    </button>
+
+
+                    <div class="or">
+                        or register with email
+                    </div>
+
+
+                    <!-- New account registration form -->
+                    <form id="registerForm">
+
+                        <!-- Full name -->
+                        <label for="name">
+                            Full name
+                        </label>
+
+                        <input
+                            id="name"
+                            type="text"
+                            placeholder="Your name"
+                            minlength="2"
+                            required
+                        >
+
+
+                        <!-- Email address -->
+                        <label for="regEmail">
+                            Email address
+                        </label>
+
+                        <input
+                            id="regEmail"
+                            type="email"
+                            placeholder="you@example.com"
+                            required
+                        >
+
+
+                        <!-- New password with visibility toggle -->
+                        <label for="regPassword">
+                            Create password
+                        </label>
+
+                        <div class="pass">
+
+                            <input
+                                id="regPassword"
+                                type="password"
+                                placeholder="At least 8 characters"
+                                minlength="8"
+                                required
+                            >
+
+                            <button
+                                type="button"
+                                data-toggle="regPassword"
+                            >
+                                Show
+                            </button>
+
+                        </div>
+
+
+                        <!-- Confirm password -->
+                        <label for="confirm">
+                            Confirm password
+                        </label>
+
+                        <input
+                            id="confirm"
+                            type="password"
+                            placeholder="Enter password again"
+                            minlength="8"
+                            required
+                        >
+
+
+                        <!-- Prototype acknowledgement -->
+                        <label class="check terms">
+
+                            <input
+                                id="terms"
+                                type="checkbox"
+                                required
+                            >
+
+                            I understand this is a prototype and
+                            authentication is not active yet.
+
+                        </label>
+
+
+                        <!-- Submit registration form -->
+                        <button class="btn full">
+                            Create account →
+                        </button>
+
+                        <!-- Registration feedback message -->
+                        <p
+                            id="registerMessage"
+                            class="message"
+                            aria-live="polite"
+                        ></p>
+
+                    </form>
+
+
+                    <!-- Link back to login page -->
+                    <p class="switch">
+                        Already have an account?
+                        <a href="#login" data-page="login">
+                            Log in
+                        </a>
+                    </p>
+
+
+                    <!-- Prototype warning -->
+                    <p class="disclaimer">
+                        Prototype only: this form does not create
+                        or store an account.
+                    </p>
+
+                </section>
+
+            </div>
+
+        </section>
+        <!-- END OF REGISTRATION PAGE -->
+
+
+    </main>
+    <!-- END OF MAIN CONTENT -->
+
+
+    <!-- =========================================
+         4. FOOTER
+         Website identity and copyright
+         ========================================= -->
+    <footer>
+
+        <!-- Footer logo and name -->
+        <a class="brand" href="#home" data-page="home">
+
+            <span class="logo">Social media handle</span>
+
+            <!-- <span>
+                <b>e-GranthKosh</b>
+                <small>Bengali Literary Heritage</small>
+            </span> -->
+
+        </a>
+
+        <span>Contact: [Add official project email]</span>
+
+        <!-- JavaScript inserts the current year -->
+        <span>
+            © <span id="year"></span> e-GranthKosh
+        </span>
+
+    </footer>
+    <!-- END OF FOOTER -->
+
+</body>
+</html>

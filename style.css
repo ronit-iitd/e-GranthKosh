@@ -1,0 +1,701 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Noto+Serif+Bengali:wght@400;600;700&display=swap');
+
+/* e-GranthKosh: restrained editorial styling */
+:root {
+    --ink: #292624;
+    --muted: #6e6864;
+    --paper: #fcfbf9;
+    --white: #ffffff;
+    --red: #873b36;
+    --red-dark: #682d29;
+    --red-soft: #92504a;
+    --rose-pale: #f5efeb;
+    --rose-wash: #faf7f4;
+    --line: #e6e0db;
+    --gold-muted: #b49a7b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 15px/1.7 'DM Sans', Arial, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 2px solid var(--red-soft);
+    outline-offset: 3px;
+}
+
+/* Header and navigation */
+header {
+    min-height: 76px;
+    padding: 14px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: 1px solid var(--line);
+    background: var(--paper);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 17px;
+}
+
+.brand small {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 400;
+}
+
+.brand .logo {
+    color: var(--red);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+nav a:not(.btn) {
+    transition: color .18s ease;
+}
+
+nav a:not(.btn):hover,
+footer a:hover {
+    color: var(--red-soft);
+}
+
+.btn {
+    display: inline-block;
+    padding: 11px 18px;
+    border: 1px solid var(--red);
+    border-radius: 0;
+    background: var(--red);
+    color: #fffaf7;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color .18s ease, border-color .18s ease;
+}
+
+.btn:hover {
+    background: var(--red-dark);
+    border-color: var(--red-dark);
+}
+
+.btn.small {
+    padding: 8px 13px;
+}
+
+.btn.full {
+    width: 100%;
+}
+
+.link {
+    display: inline-block;
+    margin-left: 16px;
+    color: var(--red);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.link:hover,
+.row a:hover,
+.switch a:hover {
+    color: var(--red-soft);
+}
+
+/* Homepage introduction */
+.hero {
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    align-items: center;
+    gap: 5%;
+    min-height: 450px;
+    padding: 62px 10%;
+}
+
+.eyebrow {
+    color: var(--red-soft);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.hero h1,
+aside h1 {
+    margin: 14px 0 18px;
+    font: 500 clamp(40px, 4.5vw, 60px)/1.14 'Playfair Display', serif;
+    letter-spacing: -.5px;
+}
+
+.hero em,
+aside em {
+    color: var(--red-soft);
+}
+
+.hero .intro,
+.hero p:not(.eyebrow) {
+    max-width: 460px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 25px;
+}
+
+.note {
+    margin-top: 26px;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+/* Bengali manuscript panel */
+.art {
+    min-height: 320px;
+    display: grid;
+    place-items: center;
+    background: #f7f3ef;
+}
+
+.manuscript {
+    width: 240px;
+    min-height: 295px;
+    padding: 25px;
+    outline: 1px solid #d8c2b5;
+    outline-offset: -9px;
+    background: #f3e7d8;
+    color: #593b38;
+    text-align: center;
+    transform: none;
+    box-shadow: 3px 5px 12px rgb(58 37 31 / 6%);
+}
+
+.manuscript small {
+    font: 10px 'Noto Serif Bengali', serif;
+}
+
+.manuscript h2 {
+    margin: 22px 0;
+    font: 600 34px/1.4 'Noto Serif Bengali', serif;
+}
+
+.manuscript hr {
+    width: 42px;
+    border: 0;
+    border-top: 1px solid var(--red-soft);
+}
+
+.manuscript p {
+    color: #79665d;
+    font: italic 12px 'Playfair Display', serif;
+}
+
+.manuscript i {
+    display: block;
+    margin-top: 12px;
+    color: #79665d;
+    font-size: 10px;
+}
+
+/* Optional overview strip, if this section is used */
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 24px 10%;
+    background: var(--rose-pale);
+}
+
+.steps > div {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.steps b {
+    color: var(--red-soft);
+    font: 22px 'Playfair Display', serif;
+}
+
+.steps small {
+    display: block;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+/* General content and search, if retained */
+.section {
+    padding: 68px 10%;
+}
+
+.section h2,
+.about h2 {
+    font: 500 clamp(30px, 3.5vw, 43px)/1.25 'Playfair Display', serif;
+}
+
+.section > p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.search {
+    display: flex;
+    gap: 10px;
+    padding: 8px;
+    border: 1px solid var(--line);
+    background: var(--white);
+}
+
+.search input {
+    flex: 1;
+    min-width: 0;
+    padding: 10px;
+    border: 0;
+    outline: 0;
+    background: transparent;
+}
+
+/* Content cards, if retained */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.cards article {
+    padding: 0 20px 20px;
+    border: 1px solid var(--line);
+    background: var(--white);
+}
+
+.card-art {
+    height: 125px;
+    margin: 0 -20px 18px;
+    display: grid;
+    place-items: center;
+    background: #f0e4dd;
+    color: var(--red);
+    font: 20px 'Noto Serif Bengali', serif;
+}
+
+.cards article:nth-child(2) .card-art {
+    background: #eee4df;
+    color: #87504b;
+    font: 17px 'Playfair Display', serif;
+    letter-spacing: 1px;
+}
+
+.cards article:nth-child(3) .card-art {
+    background: #f0e9e4;
+    color: #754541;
+    font: 600 12px 'DM Sans', sans-serif;
+    letter-spacing: 2px;
+}
+
+.cards h3 {
+    font: 600 21px 'Playfair Display', serif;
+}
+
+.cards p {
+    min-height: 55px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.cards a {
+    color: var(--red);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* Project introduction section in current HTML */
+#about-project {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 35px;
+    padding: 34px 10%;
+    border-top: 1px solid var(--line);
+    border-bottom: 0;
+    background: transparent;
+    color: var(--ink);
+}
+
+#about-project h2 {
+    margin: 8px 0;
+    font: 500 clamp(29px, 3.2vw, 40px)/1.3 'Playfair Display', serif;
+}
+
+#about-project em {
+    color: var(--red);
+    font-style: normal;
+}
+
+/* Project details and institutional acknowledgement */
+.project-details {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 18px 7% 34px;
+    text-align: left;
+}
+
+.project-details p {
+    max-width: 760px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.project-details strong {
+    font-weight: 500;
+    line-height: 1.8;
+}
+
+.project-details .hint {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 22px 7%;
+    border-top: 1px solid var(--line);
+    background: var(--paper);
+    color: var(--muted);
+    font-size: 11px;
+}
+
+footer a {
+    transition: color .18s ease;
+}
+
+/* Login and registration pages */
+.auth-page {
+    min-height: calc(100vh - 150px);
+    background: #f8f6f3;
+}
+
+.auth-layout {
+    min-height: inherit;
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    align-items: center;
+    gap: 7%;
+    max-width: 1300px;
+    margin: auto;
+    padding: 40px 9%;
+}
+
+.auth-layout aside > p:not(.eyebrow) {
+    max-width: 360px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.auth-layout blockquote {
+    max-width: 350px;
+    padding: 10px 0 10px 18px;
+    border-left: 2px solid #c7a18e;
+    color: #6c5953;
+    font: italic 19px/1.5 'Playfair Display', serif;
+}
+
+.auth-card {
+    width: min(100%, 470px);
+    justify-self: center;
+    padding: 32px 38px;
+    border: 1px solid #e8ddd7;
+    background: var(--white);
+    box-shadow: none;
+}
+
+.auth-card h2 {
+    margin: 0 0 4px;
+    font: 600 27px/1.35 'Playfair Display', serif;
+}
+
+.auth-card > p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.social {
+    width: 100%;
+    margin: 5px 0;
+    padding: 11px;
+    border: 1px solid var(--line);
+    border-radius: 0;
+    background: var(--white);
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.social:hover {
+    border-color: #cfb8ae;
+    background: #fcf7f4;
+}
+
+.or {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 18px 0;
+    color: var(--muted);
+    font-size: 10px;
+    text-align: center;
+}
+
+.or::before,
+.or::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+}
+
+/* Login and registration fields */
+form:not(.search) > label {
+    display: block;
+    margin: 11px 0 5px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+form:not(.search) > input,
+.pass input {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #ded5d0;
+    border-radius: 0;
+    background: #fff;
+    font-size: 12px;
+}
+
+form:not(.search) > input:focus,
+.pass input:focus {
+    border-color: #b9857b;
+    outline: 1px solid #b9857b;
+}
+
+.pass {
+    position: relative;
+}
+
+.pass input {
+    padding-right: 55px;
+}
+
+.pass button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    border: 0;
+    background: transparent;
+    color: var(--red);
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 12px 0;
+    font-size: 10px;
+}
+
+.row a,
+.switch a {
+    color: var(--red);
+    font-weight: 600;
+}
+
+.check {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 6px;
+    color: var(--muted);
+    font-size: 10px !important;
+    font-weight: 400 !important;
+}
+
+.check input {
+    accent-color: var(--red);
+}
+
+.terms {
+    margin: 13px 0 !important;
+}
+
+.message {
+    color: #963f39;
+    font-size: 11px;
+}
+
+.switch {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.disclaimer {
+    color: #8d7465 !important;
+    font-size: 9px !important;
+    text-align: center;
+}
+
+/* Page visibility: required by script.js */
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* Responsive layouts */
+@media (max-width: 800px) {
+    header {
+        padding: 14px 5%;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 46px 7%;
+    }
+
+    .art {
+        min-height: 290px;
+    }
+
+    .steps {
+        padding: 22px 7%;
+    }
+
+    .section {
+        padding: 50px 7%;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .cards p {
+        min-height: 0;
+    }
+
+    #about-project {
+        padding: 34px 7%;
+    }
+
+    .project-details {
+        padding-right: 7%;
+        padding-left: 7%;
+    }
+
+    .auth-layout {
+        display: block;
+        min-height: auto;
+        padding: 28px 4%;
+    }
+
+    .auth-layout aside {
+        display: none;
+    }
+
+    .auth-card {
+        margin: auto;
+        padding: 28px 22px;
+    }
+
+    footer {
+        padding: 20px 5%;
+    }
+}
+
+@media (max-width: 560px) {
+    header {
+        align-items: flex-start;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 10px;
+        font-size: 10px;
+    }
+
+    .hero {
+        padding: 38px 6%;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero .link {
+        margin: 14px 0 0;
+    }
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    #about-project {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .search {
+        gap: 3px;
+    }
+
+    .search .btn {
+        padding: 10px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
