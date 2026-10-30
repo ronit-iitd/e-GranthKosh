@@ -103,14 +103,17 @@ function sync() {
 
     let targetPage = id;
 
-    if (currentUser) {
+   if (currentUser) {
 
-        // Logged-in users always enter the dashboard
-        if (id !== 'dashboard') {
-            targetPage = 'dashboard';
-        }
+    // Allow the email verification success page
+    if (id === 'emailVerified') {
+        targetPage = 'emailVerified';
+    } else if (id !== 'dashboard') {
+        targetPage = 'dashboard';
+    }
 
-    } else {
+}
+    else {
 
         // Visitors cannot access the dashboard
         if (id === 'dashboard') {
