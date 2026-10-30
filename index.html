@@ -18,7 +18,9 @@
 
     <!-- External CSS and JavaScript files -->
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <!-- <script src="script.js" defer></script> -->
+
+    <script type="module" src="script.js"></script>
 </head>
 
 <body>
@@ -30,14 +32,13 @@
     <header class="header">
 
         <!-- Website logo and name -->
-        <a class="brand" href="#home" data-page="home">
-            <span class="logo">Logo space</span>
-
-            <span>
-                <b>e-GranthKosh</b>
-                <small>Bengali Literary Heritage</small>
-            </span>
-        </a>
+       <a class="brand" href="#home" data-page="home">
+    <img
+        src="Logos/granthkosh.png"
+        alt="e-GranthKosh"
+        class="brand-logo"
+    >
+</a>
 
         <!-- Mobile navigation toggle -->
 
@@ -46,13 +47,17 @@
 
         <!-- Main navigation -->
         <nav id="mainNav">
-            <a href="#home" data-page="home">Home</a>
-            <a href="#login" data-page="login">Log in</a>
+    <a href="#home" data-page="home" id="homeLink">Home</a>
 
-            <a class="btn small" href="#register" data-page="register">
-                Create account
-            </a>
-        </nav>
+    <a href="#dashboard" data-page="dashboard" id="dashboardLink"
+       style="display: none;">Dashboard</a>
+
+    <a href="#login" data-page="login">Log in</a>
+
+    <a class="btn small" href="#register" data-page="register">
+        Create account
+    </a>
+</nav>
 
     </header>
 
@@ -87,29 +92,65 @@
                         <h2>বাংলা<br>সাহিত্য<br><span>ও সংস্কৃতি</span></h2>
                         <hr>
                         <p>Texts, archives<br>and research</p>
-                        <i>Logo can be added here</i>
+                        <!-- <i>Logo can be added here</i> -->
                     </div>
                 </div>
             </section>
 
             <section class="about" id="about-project">
-                <div class="logo big" aria-hidden="true">Logo symbol</div>
+                <div class="institutional-logos">
+
+    <img
+        src="Logos/IITD.png"
+        alt="Indian Institute of Technology Delhi"
+        class="institution-logo"
+    >
+
+    <img
+        src="Logos/ANRF.jpeg"
+        alt="Anusandhan National Research Foundation"
+        class="institution-logo"
+    >
+
+</div>
                 <div>
                     <!-- <p class="eyebrow">About the project</p> -->
                     <h2>Making heritage texts<br><em>available for research.</em></h2>
                 </div>
-               <!--  <p>
-                    The project aims to build reliable, machine-readable collections
-                    of heritage texts in Indian languages and support new research in
-                    literary history, language, and culture.
-                </p> -->
+               
             </section>
 
-            <section class="section project-details">
-                <p class="eyebrow">Project information</p>
-                <p><strong>A research project at the Indian Institute of Technology Delhi, supported by the Anusandhan National Research Foundation (ANRF).</strong></p>
-                <p class="hint">Any small info can be added(people involved in this project)</p>
-            </section>
+            
+<section class="section project-details">
+
+    <p class="eyebrow">Project information</p>
+
+    <p class="project-description">
+        A research project at the Indian Institute of Technology Delhi,
+        supported by the Anusandhan National Research Foundation (ANRF).
+    </p>
+
+    <div class="project-team">
+
+        <p class="team-heading">PEOPLE INVOLVED</p>
+
+        <div class="team-column">
+            <h4>FACULTY</h4>
+            <p>Arjun Ghosh</p>
+            <p>Ashwini Vaidya</p>
+            <p>Chetan Arora</p>
+        </div>
+
+        <div class="team-column">
+            <h4>STUDENTS</h4>
+            <p>Ronit Das</p>
+            <p>Sai Sudeep Das</p>
+        </div>
+
+    </div>
+
+</section>
+
         </section>
         <!-- END OF HOME PAGE -->
 
@@ -265,8 +306,7 @@
 
                     <!-- Prototype warning -->
                     <p class="disclaimer">
-                        Prototype only: authentication is not active.
-                        Do not enter a real password.
+                        Your account will be created securely.
                     </p>
 
                 </section>
@@ -424,8 +464,7 @@
                                 required
                             >
 
-                            I understand this is a prototype and
-                            authentication is not active yet.
+                            I understand that I must verify my email before logging in.
 
                         </label>
 
@@ -456,8 +495,7 @@
 
                     <!-- Prototype warning -->
                     <p class="disclaimer">
-                        Prototype only: this form does not create
-                        or store an account.
+                        Your account information is managed securely through Firebase Authentication.
                     </p>
 
                 </section>
@@ -467,6 +505,154 @@
         </section>
         <!-- END OF REGISTRATION PAGE -->
 
+
+<!-- EMAIL VERIFICATION SUCCESS PAGE -->
+<section id="emailVerified" class="page auth-page">
+
+    <div class="verification-layout">
+
+        <section class="auth-card verification-card">
+
+            <p class="eyebrow">Account verification</p>
+
+            <h2>Email verified successfully!</h2>
+
+            <p class="muted">
+                Your email address has been verified.
+                Your account is now ready to use.
+            </p>
+
+            <a href="#login" data-page="login" class="btn full">
+                Log in →
+            </a>
+
+        </section>
+
+    </div>
+
+</section>
+<!-- END OF EMAIL VERIFICATION SUCCESS PAGE -->
+
+
+<!-- DASHBOARD PAGE -->
+<section id="dashboard" class="page dashboard-page">
+
+    <div class="dashboard-layout">
+
+        <!-- Dashboard sidebar -->
+        <aside class="dashboard-sidebar">
+
+            <h2>e-GranthKosh</h2>
+            <p>Research Workspace</p>
+
+            <nav class="dashboard-nav">
+                <a href="#dashboard" data-page="dashboard" class="active">
+                    Dashboard
+                </a>
+
+                <a href="#library" data-page="library">
+                    Digital Library
+                </a>
+
+                <a href="#collections" data-page="collections">
+                    Collections
+                </a>
+
+                <a href="#search" data-page="search">
+                    Advanced Search
+                </a>
+
+                <a href="#saved" data-page="saved">
+                    My Library
+                </a>
+
+                <a href="#research" data-page="research">
+                    Research Tools
+                </a>
+
+                <a href="#contribute" data-page="contribute">
+                    Contribute to Archive
+                </a>
+
+                <a href="#profile" data-page="profile">
+                    My Profile
+                </a>
+
+                <a href="#settings" data-page="settings">
+                    Settings
+                </a>
+            </nav>
+
+        </aside>
+
+
+        <!-- Dashboard main content -->
+        <div class="dashboard-main">
+
+            <div class="dashboard-heading">
+                <p class="eyebrow">Your research workspace</p>
+
+                <h1>Welcome to e-GranthKosh</h1>
+
+                <p>
+                    Explore literary heritage, discover digital texts
+                    and work with multilingual collections.
+                </p>
+            </div>
+
+
+            <!-- Dashboard search -->
+            <div class="dashboard-search">
+                <input
+                    type="search"
+                    placeholder="Search texts, authors, collections..."
+                >
+                <button type="button">Search</button>
+            </div>
+
+
+            <!-- Dashboard feature cards -->
+            <div class="dashboard-cards">
+
+                <article class="dashboard-card">
+                    <h3>Digital Library</h3>
+                    <p>Explore digitised literary texts and manuscripts.</p>
+                    <a href="#library" data-page="library">Explore library →</a>
+                </article>
+
+                <article class="dashboard-card">
+                    <h3>Language Collections</h3>
+                    <p>Browse literary collections across Indian languages.</p>
+                    <a href="#collections" data-page="collections">Browse collections →</a>
+                </article>
+
+                <article class="dashboard-card">
+                    <h3>Research Tools</h3>
+                    <p>Access computational tools for textual research.</p>
+                    <a href="#research" data-page="research">Explore tools →</a>
+                </article>
+
+                <article class="dashboard-card">
+                    <h3>My Library</h3>
+                    <p>Access your saved texts and reading materials.</p>
+                    <a href="#saved" data-page="saved">View saved texts →</a>
+                </article>
+
+            </div>
+
+
+            <!-- Recent activity -->
+            <section class="dashboard-recent">
+                <h2>Recently accessed</h2>
+                <p>Your recently accessed texts will appear here.</p>
+            </section>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- END OF DASHBOARD PAGE -->
 
     </main>
     <!-- END OF MAIN CONTENT -->
@@ -481,7 +667,25 @@
         <!-- Footer logo and name -->
         <a class="brand" href="#home" data-page="home">
 
-            <span class="logo">Social media handle</span>
+            <div class="social-icons">
+
+    <a href="#" aria-label="Instagram">
+        <img src="Logos/instagram.svg" alt="Instagram">
+    </a>
+
+    <a href="#" aria-label="Facebook">
+        <img src="Logos/facebook.svg" alt="Facebook">
+    </a>
+
+    <a href="#" aria-label="X">
+        <img src="Logos/x.svg" alt="X">
+    </a>
+
+    <a href="#" aria-label="YouTube">
+        <img src="Logos/youtube.svg" alt="YouTube">
+    </a>
+
+</div>
 
             <!-- <span>
                 <b>e-GranthKosh</b>
@@ -490,7 +694,7 @@
 
         </a>
 
-        <span>Contact: [Add official project email]</span>
+        <span>Contact: <a>demo-mail@iitd.ac.in</a></span>
 
         <!-- JavaScript inserts the current year -->
         <span>
