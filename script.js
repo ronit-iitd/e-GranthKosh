@@ -292,17 +292,7 @@ await updateProfile(userCredential.user, {
 });
 
 
-const actionCodeSettings = {
-    url: window.location.hostname === 'localhost'
-        ? 'http://localhost:8000/#emailVerified'
-        : 'https://ronit-iitd.github.io/e-GranthaKosh/#emailVerified',
-    handleCodeInApp: false
-};
-
-await sendEmailVerification(
-    userCredential.user,
-    actionCodeSettings
-);
+await sendEmailVerification(userCredential.user);
 
 await signOut(auth);
 
